@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>타이틀</title>
+<script>
+    function setCookie(name, value, expiredays){
+        var todayDate = new Date();
+            todayDate.setDate (todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+        }
+  
+        function closePop(){
+            if (document.frm.pop.checked){
+            setCookie("popname", "done", 1);
+        }
+        self.close();
+    }
+</script>
+<style type="text/css">
+ 
+body {
+ margin-left: 0px;
+ margin-top: 0px;
+ margin-right: 0px;
+ margin-bottom: 0px;
+}
+ 
+</style>
+</head>
+<body>
+ 
+ 
+<form name="frm" method="post" action="">   
+<table width="" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td><img src="//t1.daumcdn.net/tistory_admin/static/images/xBoxReplace_250.png" width="250" height="250" border="0"></td>
+  </tr>
+  <tr>
+    <td height="30" align="right" bgcolor="#000000">
+    <table border="0" cellpadding="0" cellspacing="2">       
+        <tbody><tr>
+         <td><input class="PopupCheck" type="checkbox" name="pop" onclick="closePop()"></td>
+         <td style="font-size:11px;color:#FFFFFF;">하루동안 이 창을 열지 않음</td>
+            <td style="font-size:11px;"><a href="javascript:self.close();" onfocus="this.blur()">[닫기]</a></td>
+        </tr>
+    </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+ </form>
+ </body>
+ </html>
